@@ -1,0 +1,28 @@
+{
+  "name": "next-creative",
+  "version": "16.2.0-canary.61",
+  "description": "Creative navigation APIs for Next.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vercel/next.js",
+    "directory": "packages/next-creative"
+  },
+  "author": "Next.js Team <support@vercel.com>",
+  "license": "MIT",
+  "exports": {
+    "./navigation": {
+      "types": "./navigation.d.ts",
+      "default": "./navigation.js"
+    }
+  },
+  "files": [
+    "navigation.js",
+    "navigation.d.ts"
+  ],
+  "peerDependencies": {
+    "next": "^16.0.0-canary.0 || ^16.0.0"
+  },
+  "scripts": {
+    "prepublishOnly": "cd ../../ && turbo run build"
+  }
+}
