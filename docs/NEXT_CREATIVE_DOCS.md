@@ -14,6 +14,8 @@ Central index for product and engineering docs related to `next-creative`.
   - API contract draft for `next-creative/navigation`
 - `docs/NEXT_CREATIVE_EXAMPLES.md`
   - initial usage examples for `useRouteTransition` and `completeExit()`
+- `docs/NEXT_CREATIVE_DEVELOPMENT.md`
+  - contributor workflow (local build, rebase, publish)
 
 ## Current Status
 

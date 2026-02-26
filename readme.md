@@ -1,14 +1,30 @@
 # next-creative
 
-`next-creative` is a lite fork of Next.js focused on creative route transitions.
+Creative-first Next.js fork for advanced page transitions (interruptible and non-interruptible) and WebGL/R3F-heavy sites.
 
-This repo is structured to keep rebases from upstream `next.js` simple:
+## Quickstart (as a user)
 
-- core fork changes live mainly in `packages/next`
-- consumer-facing creative surface is `packages/next-creative`
-- runnable demos live in `examples/`
+Create a normal Next app, then install `next-creative`:
 
-## Clone and run
+```bash
+npx create-next-app@latest my-creative-site
+cd my-creative-site
+npm i next-creative
+```
+
+Use regular Next scripts (`next dev`, `next build`, `next start`) or call the provided binary explicitly:
+
+```bash
+npx next-creative dev
+```
+
+Creative navigation APIs:
+
+```ts
+import { useRouter, TransitionBoundary } from 'next-creative/navigation'
+```
+
+## Try the studio demo
 
 ```bash
 git clone https://github.com/emalorenzo/next-creative.git
@@ -21,40 +37,29 @@ pnpm --dir examples/with-next-creative-studio dev
 
 Open `http://localhost:3000`.
 
-Shortcut commands from repo root:
+## What this repo contains
 
-```bash
-pnpm dev:creative-example
-pnpm build:creative-example
-```
+- Core fork changes mainly in `packages/next`
+- Public distribution wrapper in `packages/next-creative`
+- Runnable demos in `examples/`
 
-## Build pages from examples
-
-Examples are standard App Router apps. Keep creating routes directly in `app/`:
-
-- `app/contact/page.jsx` -> `/contact`
-- `app/case-studies/page.jsx` -> `/case-studies`
-- `app/case-studies/[slug]/page.jsx` -> dynamic routes
-
-## Installing this fork from npm
+## Published packages
 
 ```bash
 npm i next-creative
 ```
 
-Published packages:
-
 - `next-creative@16.2.0-canary.62`
 - `@emalorenzo/next@16.2.0-canary.62`
 
-Local development in this repo still uses file deps in `examples/with-next-creative-studio`:
+## For maintainers of this fork
 
-- `next` from `file:../../packages/next`
-- `next-creative` from `file:../../packages/next-creative`
+See [NEXT_CREATIVE_DEVELOPMENT.md](/Users/ema/Dev/next-creative-fork/docs/NEXT_CREATIVE_DEVELOPMENT.md) for local build, rebase flow, and publish workflow.
 
 ## Docs
 
 - `docs/NEXT_CREATIVE_API.md`
+- `docs/NEXT_CREATIVE_DEVELOPMENT.md`
 - `docs/NEXT_CREATIVE_DOCS.md`
 - `docs/NEXT_CREATIVE_EXAMPLES.md`
 - `docs/PLAN.md`

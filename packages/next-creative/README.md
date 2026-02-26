@@ -1,17 +1,38 @@
 # next-creative
 
-`next-creative` is the distribution layer for this fork.
+Creative-first Next.js distribution focused on advanced route transitions.
 
-It ships a `next` CLI binary and proxies core imports to the bundled `next`
-dependency, so consumers can start with:
+## Install
 
 ```bash
 npm i next-creative
 ```
 
-## Public API
+Then run your app normally:
 
-- `next-creative` (root export)
-  - Re-exports the `next` package
+```bash
+npm run dev
+```
+
+Or explicitly:
+
+```bash
+npx next-creative dev
+```
+
+## Imports
+
+- `next-creative`
+  - Re-exports Next core API
 - `next-creative/navigation`
-  - Re-exports `next/navigation`, including creative transition hooks.
+  - Re-exports `next/navigation` and creative transition primitives
+
+```ts
+import { useRouter, TransitionBoundary } from 'next-creative/navigation'
+```
+
+## Demo
+
+Studio example app:
+
+- https://github.com/emalorenzo/next-creative/tree/main/examples/with-next-creative-studio
