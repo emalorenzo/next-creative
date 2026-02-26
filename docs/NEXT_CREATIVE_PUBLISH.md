@@ -33,7 +33,7 @@ After rebasing from upstream:
 ## Minimal smoke commands
 
 ```bash
-corepack pnpm --filter=next build
-corepack pnpm --dir examples/with-next-creative-studio install --ignore-workspace --lockfile=false
-corepack pnpm --dir examples/with-next-creative-studio dev
+pnpm --filter=next build
+pnpm --dir examples/with-next-creative-studio install --ignore-workspace --lockfile=false
+pnpm --dir examples/with-next-creative-studio dev
 ```
