@@ -54,7 +54,7 @@ npm i next-creative
 
 ## For maintainers of this fork
 
-See [NEXT_CREATIVE_DEVELOPMENT.md](/Users/ema/Dev/next-creative-fork/docs/NEXT_CREATIVE_DEVELOPMENT.md) for local build, rebase flow, and publish workflow.
+See [NEXT_CREATIVE_DEVELOPMENT.md](docs/NEXT_CREATIVE_DEVELOPMENT.md) for local build, rebase flow, and publish workflow.
 
 ## Docs
 
