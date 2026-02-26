@@ -1,21 +1,32 @@
 {
   "name": "next-creative",
   "version": "16.2.0-canary.61",
-  "description": "Creative navigation APIs for Next.js",
+  "description": "Creative fork distribution layer for Next.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vercel/next.js",
+    "url": "https://github.com/emalorenzo/next-creative",
     "directory": "packages/next-creative"
   },
-  "author": "Next.js Team <support@vercel.com>",
+  "author": "next-creative maintainers",
   "license": "MIT",
+  "bin": {
+    "next": "./bin/next.js",
+    "next-creative": "./bin/next.js"
+  },
   "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
     "./navigation": {
       "types": "./navigation.d.ts",
       "default": "./navigation.js"
     }
   },
   "files": [
+    "bin",
+    "index.js",
+    "index.d.ts",
     "navigation.js",
     "navigation.d.ts"
   ],

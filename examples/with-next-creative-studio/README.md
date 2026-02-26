@@ -23,6 +23,11 @@ corepack pnpm --dir examples/with-next-creative-studio dev
 
 Open `http://localhost:3000`.
 
+This example consumes local packages from this repository:
+
+- `next` -> `file:../../packages/next`
+- `next-creative` -> `file:../../packages/next-creative`
+
 ## Continue building from here
 
 Add pages directly inside `app/`:

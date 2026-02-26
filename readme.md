@@ -1,27 +1,19 @@
 # next-creative
 
-`next-creative` is a lite fork of Next.js focused on creative route transitions and choreography.
+`next-creative` is a lite fork of Next.js focused on creative route transitions.
 
-This repository contains:
+This repo is structured to keep rebases from upstream `next.js` simple:
 
-- the framework source (`packages/next`) with creative transition hooks
-- the `packages/next-creative` package
-- docs for API/design/plan under `docs/NEXT_CREATIVE_*`
-- runnable examples under `examples/`
+- core fork changes live mainly in `packages/next`
+- consumer-facing creative surface is `packages/next-creative`
+- runnable demos live in `examples/`
 
-## Quick start
+## Clone and run
 
 ```bash
 git clone https://github.com/emalorenzo/next-creative.git
 cd next-creative
 corepack pnpm install
-```
-
-## Run an example
-
-Build local Next.js first, then run any example:
-
-```bash
 corepack pnpm --filter=next build
 corepack pnpm --dir examples/with-next-creative-studio install --ignore-workspace --lockfile=false
 corepack pnpm --dir examples/with-next-creative-studio dev
@@ -29,33 +21,43 @@ corepack pnpm --dir examples/with-next-creative-studio dev
 
 Open `http://localhost:3000`.
 
-You can do the same with other examples by changing the directory:
+Shortcut commands from repo root:
 
 ```bash
-corepack pnpm --dir examples/<another-example> install --ignore-workspace --lockfile=false
-corepack pnpm --dir examples/<another-example> dev
+corepack pnpm dev:creative-example
+corepack pnpm build:creative-example
 ```
 
-## Keep building pages from examples
+## Build pages from examples
 
-Inside an example app (for example `examples/with-next-creative-studio`), edit files in `app/` and create new routes the same way as any App Router project:
+Examples are standard App Router apps. Keep creating routes directly in `app/`:
 
-- `app/page.jsx` for `/`
-- `app/about/page.jsx` for `/about`
-- `app/blog/[slug]/page.jsx` for dynamic routes
+- `app/contact/page.jsx` -> `/contact`
+- `app/case-studies/page.jsx` -> `/case-studies`
+- `app/case-studies/[slug]/page.jsx` -> dynamic routes
 
-## Use this fork in another app (without npm publish)
+## Installing this fork from npm (target)
 
-This fork is not published to npm yet. Use local packing:
+Goal UX:
 
 ```bash
-corepack pnpm --filter=next build
-corepack pnpm pack-next
+npm i next-creative
 ```
 
-Then install the generated tarball in your app (path printed by `pack-next`).
+Current status:
 
-## Useful docs
+- `packages/next-creative` is prepared as the public wrapper package.
+- For local development in this repo, examples consume:
+  - `next` from `file:../../packages/next`
+  - `next-creative` from `file:../../packages/next-creative`
+
+To complete npm-only install for external users, publish workflow needs:
+
+1. publish forked core build as an npm package (kept in sync with `packages/next`)
+2. wire `next-creative` to that published core package
+3. keep CLI compatibility (`next` bin) and creative exports (`next-creative/navigation`)
+
+## Docs
 
 - `docs/NEXT_CREATIVE_API.md`
 - `docs/NEXT_CREATIVE_DOCS.md`

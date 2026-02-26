@@ -1,13 +1,15 @@
 {
   "private": true,
   "scripts": {
-    "dev": "node ../../packages/next/dist/bin/next dev",
-    "build": "node ../../packages/next/dist/bin/next build",
-    "start": "node ../../packages/next/dist/bin/next start"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.5.0",
+    "next": "file:../../packages/next",
+    "next-creative": "file:../../packages/next-creative",
     "react": "19.3.0-canary-c0060cf2-20260224",
     "react-dom": "19.3.0-canary-c0060cf2-20260224",
     "three": "^0.183.1"
