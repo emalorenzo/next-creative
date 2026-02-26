@@ -2,22 +2,18 @@
 
 Creative App Router transitions with a persistent WebGL stage (R3F + Drei).
 
-This example demonstrates practical creative-navigation flows for a studio site:
+## What this example shows
 
 - interruption-safe exits (`interrupt`) without stale completion callbacks
 - directional back/forward choreography (`transition.direction`)
-- persistent layout with independent content and modal transition boundaries
+- persistent layout with independent content and modal boundaries
 - intercepted route modal over a stable background scene
 - persistent R3F + Drei stage reacting to navigation action/direction
-- cinematic 3s carousel lab (`/carousel/a`, `/carousel/b`) with shared 3D fly-through
-  and switchable concurrency mode (`interrupt` vs `block`) from the shell controls
+- cinematic 3s carousel lab (`/carousel/a`, `/carousel/b`) with switchable mode (`interrupt` vs `block`)
 
-## How to use (inside this monorepo)
+## Run from this repo
 
-The example uses the local canary Next.js binary (`packages/next/dist/bin/next`)
-because creative transition APIs are not in the published stable package yet.
-
-From the repo root:
+From the repository root:
 
 ```bash
 corepack pnpm --filter=next build
@@ -25,9 +21,19 @@ corepack pnpm --dir examples/with-next-creative-studio install --ignore-workspac
 corepack pnpm --dir examples/with-next-creative-studio dev
 ```
 
-Then open `http://localhost:3000`.
+Open `http://localhost:3000`.
 
-## Routes
+## Continue building from here
+
+Add pages directly inside `app/`:
+
+- `app/contact/page.jsx` -> `/contact`
+- `app/case-studies/page.jsx` -> `/case-studies`
+- `app/case-studies/[slug]/page.jsx` -> dynamic detail route
+
+This is a normal Next.js App Router app, so you can keep extending routes/components as usual.
+
+## Routes included
 
 - `/` control room + modal triggers
 - `/work`
