@@ -1,1 +1,1 @@
-module.exports = require('next')
+module.exports = require('@emalorenzo/next')

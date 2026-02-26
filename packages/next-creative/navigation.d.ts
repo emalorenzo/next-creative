@@ -1,1 +1,1 @@
-export * from 'next/navigation'
+export * from '@emalorenzo/next/navigation'

@@ -1,1 +1,1 @@
-module.exports = require('next/navigation')
+module.exports = require('@emalorenzo/next/navigation')

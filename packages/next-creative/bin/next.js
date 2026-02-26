@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-require('next/dist/bin/next')
+require('@emalorenzo/next/dist/bin/next')

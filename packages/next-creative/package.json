@@ -1,6 +1,6 @@
 {
   "name": "next-creative",
-  "version": "16.2.0-canary.61",
+  "version": "16.2.0-canary.62",
   "description": "Creative fork distribution layer for Next.js",
   "repository": {
     "type": "git",
@@ -25,15 +25,17 @@
   },
   "files": [
     "bin",
+    "scripts",
     "index.js",
     "index.d.ts",
     "navigation.js",
     "navigation.d.ts"
   ],
-  "peerDependencies": {
-    "next": "^16.0.0-canary.0 || ^16.0.0"
+  "dependencies": {
+    "@emalorenzo/next": "16.2.0-canary.62"
   },
   "scripts": {
+    "postinstall": "node ./scripts/link-next.cjs",
     "prepublishOnly": "cd ../../ && turbo run build"
   }
 }
